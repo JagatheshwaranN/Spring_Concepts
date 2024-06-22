@@ -43,3 +43,16 @@ place of all these 3 annotations.
 Application Context Overview
 ============================
 Spring IOC Container is a place where spring would create the beans and maintains it.
+
+File/Resource Handling
+======================
+Use classpath, when the file is part of the project.
+Use file, when the file is external.
+Use http, when the file is from web.
+
+Syntax:
+=======
+@Value("classpath:features/data.csv")
+@Value("file:/home/learning/data.csv")
+@Value("https://www.google.com")
+
