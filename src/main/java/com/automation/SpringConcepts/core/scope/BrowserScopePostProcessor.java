@@ -1,4 +1,4 @@
-package com.automation.SpringConcepts.scope;
+package com.automation.SpringConcepts.core.scope;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanFactoryPostProcessor;

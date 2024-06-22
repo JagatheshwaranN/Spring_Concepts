@@ -1,7 +1,7 @@
 package com.automation.SpringConcepts.page.google;
 
 
-import com.automation.SpringConcepts.annotation.Page;
+import com.automation.SpringConcepts.core.annotation.Page;
 import com.automation.SpringConcepts.page.Base;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;

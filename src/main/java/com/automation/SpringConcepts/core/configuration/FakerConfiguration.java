@@ -1,4 +1,4 @@
-package com.automation.SpringConcepts.configuration;
+package com.automation.SpringConcepts.core.configuration;
 
 import com.github.javafaker.Faker;
 import org.springframework.context.annotation.Bean;

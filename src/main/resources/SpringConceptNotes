@@ -39,3 +39,7 @@ Under the Spring base folder, follow the below steps.
    c. @Lazy
 The above annotations can be added to the annotation class to use the annotation class as alias in
 place of all these 3 annotations.
+
+Application Context Overview
+============================
+Spring IOC Container is a place where spring would create the beans and maintains it.

@@ -1,11 +1,14 @@
-package com.automation.SpringConcepts.util;
+package com.automation.SpringConcepts.core.service;
 
+import com.github.javafaker.Faker;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import org.springframework.util.FileCopyUtils;
 
 import java.io.File;
@@ -13,22 +16,26 @@ import java.io.IOException;
 import java.nio.file.Path;
 
 @Lazy
-@Component
+@Service
 public class ScreenCapture {
 
     @Autowired
-    private TakesScreenshot takesScreenshot;
+    private ApplicationContext applicationContext;
+
+    @Autowired
+    private Faker faker;
 
     @Value("${screen.path}")
     private Path path;
 
 
-    public void captureScreenshot(String fileName) {
-        File src = this.takesScreenshot.getScreenshotAs(OutputType.FILE);
+    public void captureScreenshot() {
+        File src = this.applicationContext.getBean(TakesScreenshot.class).getScreenshotAs(OutputType.FILE);
         try {
-            FileCopyUtils.copy(src, path.resolve(fileName).toFile());
+            FileCopyUtils.copy(src, path.resolve(faker.random().nextInt(1001, 9999) +".png").toFile());
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
+
 }

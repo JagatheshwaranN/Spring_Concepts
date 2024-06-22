@@ -1,4 +1,4 @@
-package com.automation.SpringConcepts.scope;
+package com.automation.SpringConcepts.core.scope;
 
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.remote.SessionId;

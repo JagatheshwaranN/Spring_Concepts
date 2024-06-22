@@ -1,8 +1,9 @@
 package com.automation.SpringConcepts.google;
 
 import com.automation.SpringConcepts.SpringTestNGTest;
+import com.automation.SpringConcepts.core.annotation.LazyAutowired;
 import com.automation.SpringConcepts.page.google.GooglePage;
-import com.automation.SpringConcepts.util.ScreenCapture;
+import com.automation.SpringConcepts.core.service.ScreenCapture;
 import com.google.common.util.concurrent.Uninterruptibles;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
@@ -13,11 +14,10 @@ import java.util.concurrent.TimeUnit;
 
 public class GoogleApp1Test extends SpringTestNGTest {
 
-    @Autowired
+    @LazyAutowired
     private GooglePage googlePage;
 
-    @Lazy
-    @Autowired
+    @LazyAutowired
     private ScreenCapture screenCapture;
 
     @Test
@@ -28,7 +28,7 @@ public class GoogleApp1Test extends SpringTestNGTest {
         this.googlePage.getSearch().search("Spring Boot");
         Assert.assertTrue(this.googlePage.getSearchResult().isAt());
         Assert.assertTrue(this.googlePage.getSearchResult().getResultCount() > 10);
-        //this.screenCapture.captureScreenshot("google_app_test.png");
+        this.screenCapture.captureScreenshot();
         this.googlePage.closeBrowser();
     }
 

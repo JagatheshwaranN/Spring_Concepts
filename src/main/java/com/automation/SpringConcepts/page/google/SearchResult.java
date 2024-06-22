@@ -1,6 +1,6 @@
 package com.automation.SpringConcepts.page.google;
 
-import com.automation.SpringConcepts.annotation.PageComponent;
+import com.automation.SpringConcepts.core.annotation.PageComponent;
 import com.automation.SpringConcepts.page.Base;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

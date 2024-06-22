@@ -1,4 +1,4 @@
-package com.automation.SpringConcepts.configuration;
+package com.automation.SpringConcepts.core.configuration;
 
 import org.openqa.selenium.edge.EdgeOptions;
 import org.springframework.context.annotation.Configuration;

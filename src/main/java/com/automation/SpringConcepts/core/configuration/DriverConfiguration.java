@@ -1,5 +1,6 @@
-package com.automation.SpringConcepts.configuration;
+package com.automation.SpringConcepts.core.configuration;
 
+import com.automation.SpringConcepts.core.annotation.ThreadScope;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -14,17 +15,16 @@ import org.springframework.context.annotation.Scope;
 @Profile("!remote")
 public class DriverConfiguration {
 
-    @Bean
+    @ThreadScope
+    //@ConditionalOnProperty(name = "browser", havingValue = "firefox")
     // @Primary
-    @ConditionalOnProperty(name = "browser", havingValue = "firefox")
     public WebDriver firefoxDriver() {
         return new FirefoxDriver();
     }
 
-    @Bean
+    @ThreadScope
+    //@ConditionalOnMissingBean
     //@ConditionalOnProperty(name = "browser", havingValue = "chrome")
-    @Scope("browser-scope")
-    @ConditionalOnMissingBean
     public WebDriver chromeDriver() {
         return new ChromeDriver();
     }
