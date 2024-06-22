@@ -2,3 +2,40 @@ To run the test script on qa / stage environment from local / remote, the below 
 should be used.
 spring.profiles.active=qa,local - This command will run script on qa in local.
 spring.profiles.active=stage,remote - This command will run script on stage in remote.
+
+Bean Scope
+==========
+1. Singleton
+2. Prototype
+
+Singleton
+==========
+By default, the bean scope is Singleton.
+
+1. Only one instance of the Bean.
+2. Shared with all the objects.
+3. Shared with all the threads.
+4. Good for reporting / logging.
+5. Avoid mutating instance variables
+6. You responsibility is to keep the object thread safe!
+
+Prototype
+=========
+1. Fresh instance for all.
+2. Note: PreDestroy will not be invoked.
+
+To Create Custom Annotation
+===========================
+Under the Spring base folder, follow the below steps.
+1. create a package and choose Java class, then select type as annotation.
+2. Give the name for the class and create it.
+3. Add the annotations as below
+   a. @Retention(RetentionPolicy.RUNTIME) - It denotes that this annotation should be available at Runtime.
+   b. @Target({ElementType.TYPE}) - It denotes that this annotation is applied to classes.
+4. Now, the annotations whatever we need to group to create custom annotation can be added.
+5. For example, if we need to create the custom annotation for below,
+   a. @Component
+   b. @Scope("prototype")
+   c. @Lazy
+The above annotations can be added to the annotation class to use the annotation class as alias in
+place of all these 3 annotations.

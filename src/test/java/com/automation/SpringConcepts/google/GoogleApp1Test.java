@@ -21,14 +21,15 @@ public class GoogleApp1Test extends SpringTestNGTest {
     private ScreenCapture screenCapture;
 
     @Test
-    public void validateGoogleTest() {
+    public void validateGoogleTest1() {
         this.googlePage.launch();
         Assert.assertTrue(this.googlePage.isAt());
         Uninterruptibles.sleepUninterruptibly(3, TimeUnit.SECONDS);
         this.googlePage.getSearch().search("Spring Boot");
         Assert.assertTrue(this.googlePage.getSearchResult().isAt());
         Assert.assertTrue(this.googlePage.getSearchResult().getResultCount() > 10);
-        this.screenCapture.captureScreenshot("google_app_test.png");
+        //this.screenCapture.captureScreenshot("google_app_test.png");
+        this.googlePage.closeBrowser();
     }
 
 }

@@ -19,13 +19,14 @@ public class GoogleApp2Test extends SpringTestNGTest {
     private ScreenCapture screenCapture;
 
     @Test
-    public void validateGoogleTest() {
+    public void validateGoogleTest2() {
         this.googlePage.launch();
         Assert.assertTrue(this.googlePage.isAt());
         this.googlePage.getSearch().search("Selenium");
         Assert.assertTrue(this.googlePage.getSearchResult().isAt());
         Assert.assertTrue(this.googlePage.getSearchResult().getResultCount() > 10);
-        this.screenCapture.captureScreenshot("google_app_test.png");
+        //this.screenCapture.captureScreenshot("google_app_test.png");
+        //this.googlePage.closeBrowser();
     }
 
 }
