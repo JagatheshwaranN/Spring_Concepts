@@ -1,0 +1,4 @@
+To run the test script on qa / stage environment from local / remote, the below command
+should be used.
+spring.profiles.active=qa,local - This command will run script on qa in local.
+spring.profiles.active=stage,remote - This command will run script on stage in remote.
