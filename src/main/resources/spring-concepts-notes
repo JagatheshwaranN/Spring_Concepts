@@ -73,3 +73,20 @@ PropertiesLoaderUtils
 @TestPropertySource
 ===================
 To set the test specific properties.
+
+Spring Data JPA
+===============
+1. JPA - Java Persistence API.
+2. Provides a nice abstraction to connect to various SQL/No SQL Databases.
+3. Do not write a single line of SQL (Hibernate Lib).
+4. Select / Insert / Update / Delete
+5. Where / Aggregation
+
+Spring Data JPA - Basics
+========================
+1. We need to create one java class for each table. Also, the tables are mapped
+   by class and the table columns are mapped by fields inside the class.
+2. The class we create is called as Entity class.
+3. Spring automatically creates the repository class.
+
+Reference: https://docs.spring.io/spring-data/jpa/reference/#jpa.query-methods.query-creation
