@@ -56,3 +56,20 @@ Syntax:
 @Value("file:/home/learning/data.csv")
 @Value("https://www.google.com")
 
+ResourceLoader
+==============
+1. To get the resources at runtime (Similar to application context to get the beans at runtime).
+
+PropertiesLoaderUtils
+=====================
+1. To load N number of property files at runtime.
+
+@PropertySource
+===============
+1. To read any additional property files which are not part of the application.properties.
+2. Instead of injecting values in multiple places, just inject once.
+3. Properties into a Java Object.
+
+@TestPropertySource
+===================
+To set the test specific properties.

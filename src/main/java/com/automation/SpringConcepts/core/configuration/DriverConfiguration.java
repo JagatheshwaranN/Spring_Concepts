@@ -23,7 +23,7 @@ public class DriverConfiguration {
     }
 
     @ThreadScope
-    // @ConditionalOnMissingBean
+    @ConditionalOnMissingBean
     //@ConditionalOnProperty(name = "browser", havingValue = "chrome")
     public WebDriver chromeDriver() {
         return new ChromeDriver();
