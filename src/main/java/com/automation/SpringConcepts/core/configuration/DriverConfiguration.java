@@ -16,14 +16,14 @@ import org.springframework.context.annotation.Scope;
 public class DriverConfiguration {
 
     @ThreadScope
-    //@ConditionalOnProperty(name = "browser", havingValue = "firefox")
+    @ConditionalOnProperty(name = "browser", havingValue = "firefox")
     // @Primary
     public WebDriver firefoxDriver() {
         return new FirefoxDriver();
     }
 
     @ThreadScope
-    //@ConditionalOnMissingBean
+    // @ConditionalOnMissingBean
     //@ConditionalOnProperty(name = "browser", havingValue = "chrome")
     public WebDriver chromeDriver() {
         return new ChromeDriver();

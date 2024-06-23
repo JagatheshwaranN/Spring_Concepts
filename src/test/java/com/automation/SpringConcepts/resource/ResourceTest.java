@@ -27,7 +27,7 @@ public class ResourceTest extends SpringTestNGTest {
     @Value("${download.path}/web-file.txt")
     private Path path;
 
-    @Test(enabled = false)
+    @Test
     public void testProjectFile(){
         try {
             Files.readAllLines(userFile.getFile().toPath()).forEach(System.out::println);
@@ -36,16 +36,16 @@ public class ResourceTest extends SpringTestNGTest {
         }
     }
 
-    @Test(enabled = false)
+    @Test
     public void testExternalFile(){
         try {
-            Files.readAllLines(userFile.getFile().toPath()).forEach(System.out::println);
+            Files.readAllLines(userExternalFile.getFile().toPath()).forEach(System.out::println);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
 
-    @Test(enabled = false)
+    @Test
     public void testWebPage(){
         try {
             System.out.println(new String(webPageResource.getInputStream().readAllBytes()));
