@@ -1,13 +1,14 @@
 package com.automation.SpringConcepts.page.window;
 
 import com.automation.SpringConcepts.core.annotation.Page;
+import com.automation.SpringConcepts.core.annotation.Window;
 import com.automation.SpringConcepts.page.Base;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
-@Page
+@Window("Page A")
 public class FirstPage extends Base {
 
     @FindBy(id = "area")
