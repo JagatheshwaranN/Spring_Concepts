@@ -1,6 +1,7 @@
 package com.automation.SpringConcepts.page.flight;
 
 import com.automation.SpringConcepts.core.annotation.Page;
+import com.automation.SpringConcepts.core.annotation.Screenshot;
 import com.automation.SpringConcepts.page.Base;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -20,6 +21,7 @@ public class FlightPage extends Base {
         this.webDriver.get(url);
     }
 
+    @Screenshot
     public List<String> getTopNavLabels() {
         return this.topNavBars
                 .stream()
