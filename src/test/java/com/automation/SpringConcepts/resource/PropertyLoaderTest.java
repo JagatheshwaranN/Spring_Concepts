@@ -1,6 +1,8 @@
 package com.automation.SpringConcepts.resource;
 
 import com.automation.SpringConcepts.SpringTestNGTest;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ResourceLoader;
 import org.springframework.core.io.support.PropertiesLoaderUtils;
@@ -11,6 +13,8 @@ import java.util.Properties;
 
 public class PropertyLoaderTest extends SpringTestNGTest {
 
+    private static final Logger logger = LoggerFactory.getLogger(PropertyLoaderTest.class);
+
     @Autowired
     private ResourceLoader resourceLoader;
 
@@ -19,7 +23,7 @@ public class PropertyLoaderTest extends SpringTestNGTest {
 
         try {
             Properties properties = PropertiesLoaderUtils.loadProperties(resourceLoader.getResource("data/test.properties"));
-            System.out.println(properties);
+            logger.info(String.valueOf(properties));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

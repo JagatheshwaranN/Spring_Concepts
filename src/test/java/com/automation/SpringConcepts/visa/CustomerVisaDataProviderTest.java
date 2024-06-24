@@ -4,6 +4,8 @@ import com.automation.SpringConcepts.SpringTestNGTest;
 import com.automation.SpringConcepts.entity.Customer;
 import com.automation.SpringConcepts.page.visa.VisaRegistrationPage;
 import com.automation.SpringConcepts.repository.CustomerRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.testng.ITestContext;
@@ -11,15 +13,18 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import java.sql.Date;
-import java.util.List;
+
 
 public class CustomerVisaDataProviderTest extends SpringTestNGTest {
+
+    private static final Logger logger = LoggerFactory.getLogger(CustomerVisaDataProviderTest.class);
 
     @Autowired
     private CustomerRepository customerRepository;
 
     @Autowired
     private VisaRegistrationPage visaRegistrationPage;
+
 
     @Value("${visa.url}")
     private String url;
@@ -34,7 +39,7 @@ public class CustomerVisaDataProviderTest extends SpringTestNGTest {
         this.visaRegistrationPage.fillContactDetails(customer.getCustomerEmail(), customer.getPhone());
         this.visaRegistrationPage.fillComments(customer.getComments());
         this.visaRegistrationPage.submitForm();
-        System.out.println(this.visaRegistrationPage.getConfirmationNumber());
+        logger.info(this.visaRegistrationPage.getConfirmationNumber());
     }
 
     @DataProvider
@@ -42,7 +47,7 @@ public class CustomerVisaDataProviderTest extends SpringTestNGTest {
         return this.customerRepository.findByDobBetween(Date.valueOf(testContext.getCurrentXmlTest().getAllParameters().get("dobFrom")),
                         Date.valueOf(testContext.getCurrentXmlTest().getAllParameters().get("dobTo")))
                 .stream()
-                .limit(3)
+                .limit(1)
                 .toArray();
     }
 

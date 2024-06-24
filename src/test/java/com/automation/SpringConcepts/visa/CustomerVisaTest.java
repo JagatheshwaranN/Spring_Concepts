@@ -4,6 +4,8 @@ import com.automation.SpringConcepts.SpringTestNGTest;
 import com.automation.SpringConcepts.entity.Customer;
 import com.automation.SpringConcepts.page.visa.VisaRegistrationPage;
 import com.automation.SpringConcepts.repository.CustomerRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.testng.annotations.Test;
@@ -11,10 +13,10 @@ import org.testng.annotations.Test;
 import java.sql.Date;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 public class CustomerVisaTest extends SpringTestNGTest {
 
+    private static final Logger logger = LoggerFactory.getLogger(CustomerVisaTest.class);
 
     @Autowired
     private CustomerRepository customerRepository;
@@ -35,7 +37,7 @@ public class CustomerVisaTest extends SpringTestNGTest {
         this.customerRepository
                 .findById(85)
                 .ifPresent(customer ->
-                        System.out.println(customer.getFirstName()));
+                        logger.info(customer.getFirstName()));
     }
 
     @Test
@@ -55,7 +57,7 @@ public class CustomerVisaTest extends SpringTestNGTest {
             this.visaRegistrationPage.fillContactDetails(customer.getCustomerEmail(), customer.getPhone());
             this.visaRegistrationPage.fillComments(customer.getComments());
             this.visaRegistrationPage.submitForm();
-            System.out.println(this.visaRegistrationPage.getConfirmationNumber());
+            logger.info(this.visaRegistrationPage.getConfirmationNumber());
         }
         this.visaRegistrationPage.close();
     }
@@ -77,7 +79,7 @@ public class CustomerVisaTest extends SpringTestNGTest {
             this.visaRegistrationPage.fillContactDetails(customer.getCustomerEmail(), customer.getPhone());
             this.visaRegistrationPage.fillComments(customer.getComments());
             this.visaRegistrationPage.submitForm();
-            System.out.println(this.visaRegistrationPage.getConfirmationNumber());
+            logger.info(this.visaRegistrationPage.getConfirmationNumber());
         }
         this.visaRegistrationPage.close();
     }
@@ -99,7 +101,7 @@ public class CustomerVisaTest extends SpringTestNGTest {
             this.visaRegistrationPage.fillContactDetails(customer.getCustomerEmail(), customer.getPhone());
             this.visaRegistrationPage.fillComments(customer.getComments());
             this.visaRegistrationPage.submitForm();
-            System.out.println(this.visaRegistrationPage.getConfirmationNumber());
+            logger.info(this.visaRegistrationPage.getConfirmationNumber());
         }
         this.visaRegistrationPage.close();
     }
@@ -108,8 +110,8 @@ public class CustomerVisaTest extends SpringTestNGTest {
     public void deleteCustomerBasedOnIdTest() {
         this.customerRepository
                 .deleteById(85);
-        System.out.println("Customer Deleted");
-        System.out.println("Customer With ID 85 is present? : " + this.customerRepository
+        logger.info("Customer Deleted");
+        logger.info("Customer With ID 85 is present? : " + this.customerRepository
                 .findById(85)
                 .isPresent());
     }
@@ -120,7 +122,7 @@ public class CustomerVisaTest extends SpringTestNGTest {
         Optional<Customer> customer = this.customerRepository
                 .findById(2);
         customer.ifPresent(cust -> cust.setComments("Tourist Visa"));
-        System.out.println("Customer Detail Updated");
+        logger.info("Customer Detail Updated");
     }
 
     @Test
@@ -135,11 +137,11 @@ public class CustomerVisaTest extends SpringTestNGTest {
         customer.setCustomerEmail("john@gmail.com");
         customer.setPhone("1234567890");
         this.customerRepository.save(customer);
-        System.out.println("Customer Detail Added");
+        logger.info("Customer Detail Added");
         this.customerRepository
                 .findById(101)
                 .ifPresent(cust ->
-                        System.out.println(cust.getFirstName()));
+                        logger.info(cust.getFirstName()));
     }
 
 }

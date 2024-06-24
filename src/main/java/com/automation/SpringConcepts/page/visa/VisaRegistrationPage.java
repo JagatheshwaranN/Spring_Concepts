@@ -5,12 +5,16 @@ import com.automation.SpringConcepts.page.Base;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.time.LocalDate;
 import java.util.Objects;
 
 @Page
 public class VisaRegistrationPage extends Base {
+
+    private static final Logger logger = LoggerFactory.getLogger(VisaRegistrationPage.class);
 
     @FindBy(id = "first_4")
     private WebElement firstName;
@@ -49,27 +53,35 @@ public class VisaRegistrationPage extends Base {
     private WebElement requestNumber;
 
     public void launch(String url) {
+        logger.info("URL from Property File : " + url);
         this.webDriver.manage().window().maximize();
         this.webDriver.get(url);
     }
 
     public void fillName(String fName, String lName) {
+        logger.info("FirstName from the H2DB : " + fName);
+        logger.info("LastName from the H2DB : " + lName);
         this.firstName.sendKeys(fName);
         this.lastName.sendKeys(lName);
     }
 
     public void selectCountries(String fromCountry, String toCountry) {
+        logger.info("From Country from the H2DB : " + fromCountry);
+        logger.info("To Country from the H2DB : " + toCountry);
         new Select(this.fromCountry).selectByValue(fromCountry);
         new Select(this.toCountry).selectByValue(toCountry);
     }
 
     public void fillBirthDate(LocalDate localDate) {
+        logger.info("Date of Birth from the H2DB : " + localDate);
         new Select(this.birthYear).selectByVisibleText(String.valueOf(localDate.getYear()));
         new Select(this.birthDay).selectByVisibleText(String.valueOf(localDate.getDayOfMonth()));
         new Select(this.birthMonth).selectByValue(localDate.getMonth().toString());
     }
 
     public void fillContactDetails(String email, String phone) {
+        logger.info("Email Id from the H2DB : " + email);
+        logger.info("Phone Number from the H2DB : " + phone);
         this.userEmail.sendKeys(email);
         this.phoneNumber.sendKeys(phone);
     }

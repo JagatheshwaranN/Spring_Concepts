@@ -90,3 +90,23 @@ Spring Data JPA - Basics
 3. Spring automatically creates the repository class.
 
 Reference: https://docs.spring.io/spring-data/jpa/reference/#jpa.query-methods.query-creation
+
+Logging
+=======
+We can create logger for any class.
+Default - console.output
+
+Syntax
+======
+private static final Logger logger = LoggerFactory.getLogger(GooglePage.class);
+
+Logging level can be set in application.properties file. It is mentioned as below.
+
+logging.level.root=INFO - It will be applied to all files in the project. Here the INFO and
+above INFO level logs only captured.
+
+logging.level.com.automation.SpringConcepts.visa=WARN - It will be applied to only files in
+the given package. Here the WARN and above WARN level logs only captured.
+
+
+

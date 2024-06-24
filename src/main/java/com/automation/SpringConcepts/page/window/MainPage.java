@@ -14,16 +14,16 @@ public class MainPage extends Base {
     @FindBy(tagName = "a")
     private List<WebElement> links;
 
-    public void launch(String url){
+    public void launch(String url) {
         this.webDriver.get(url);
     }
 
-    public void openAllWindows(){
+    public void openAllWindows() {
 
         //this.links.forEach(WebElement::click);
-        for(int i = 0; i< links.size(); i++){
+        for (int i = 0; i < links.size(); i++) {
             links.get(i).click();
-            this.webDriverWait.until(ExpectedConditions.numberOfWindowsToBe(i+2));
+            this.webDriverWait.until(ExpectedConditions.numberOfWindowsToBe(i + 2));
         }
     }
 

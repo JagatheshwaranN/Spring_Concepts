@@ -1,6 +1,8 @@
 package com.automation.SpringConcepts.resource;
 
 import com.automation.SpringConcepts.SpringTestNGTest;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.Resource;
 import org.springframework.util.FileCopyUtils;
@@ -11,6 +13,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 
 public class ResourceTest extends SpringTestNGTest {
+
+    private static final Logger logger = LoggerFactory.getLogger(ResourceTest.class);
 
     @Value("classpath:data/user.csv")
     private Resource userFile;
@@ -48,7 +52,7 @@ public class ResourceTest extends SpringTestNGTest {
     @Test
     public void testWebPage(){
         try {
-            System.out.println(new String(webPageResource.getInputStream().readAllBytes()));
+            logger.info(new String(webPageResource.getInputStream().readAllBytes()));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
