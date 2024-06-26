@@ -1,4 +1,4 @@
-package com.automation.SpringConcepts;
+package com.automation.SpringConcepts.bdd.steps;
 
 import com.automation.SpringConcepts.core.annotation.LazyAutowired;
 import com.automation.SpringConcepts.page.google.GooglePage;
@@ -11,6 +11,7 @@ import org.testng.Assert;
 
 @CucumberContextConfiguration
 @SpringBootTest
+//@TestPropertySource(properties = "browser=chrome")
 public class GoogleSteps {
 
     @LazyAutowired

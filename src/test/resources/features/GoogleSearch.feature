@@ -6,7 +6,7 @@ Feature: Google Search Functionality
     Then I should see at least <count> search results
 
     Examples:
-    | keyword     | count |
-    | Spring Boot | 5     |
-    | Selenium    | 3     |
-    | Java        | 2     |
+      | keyword     | count |
+      | Spring Boot | 5     |
+      | Selenium    | 3     |
+      | Java        | 50    |

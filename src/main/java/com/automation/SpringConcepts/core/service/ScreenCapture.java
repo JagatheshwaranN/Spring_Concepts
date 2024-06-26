@@ -38,4 +38,8 @@ public class ScreenCapture {
         }
     }
 
+    public byte[] captureScreenshotByte() {
+        return this.applicationContext.getBean(TakesScreenshot.class).getScreenshotAs(OutputType.BYTES);
+    }
+
 }

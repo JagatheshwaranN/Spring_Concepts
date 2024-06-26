@@ -1,4 +1,4 @@
-package com.automation.SpringConcepts.steps;
+package com.automation.SpringConcepts.bdd.steps;
 
 import com.automation.SpringConcepts.core.annotation.LazyAutowired;
 import com.automation.SpringConcepts.page.visa.VisaRegistrationPage;
@@ -6,7 +6,9 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.cucumber.spring.CucumberContextConfiguration;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.testng.Assert;
 
 import java.time.LocalDate;

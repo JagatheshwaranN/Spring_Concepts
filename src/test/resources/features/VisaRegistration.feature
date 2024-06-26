@@ -11,7 +11,7 @@ Feature: Visa Registration Functionality
     Then I should see the visa registration confirmation number
 
     Examples:
-      | keyword     | count |
-      | Spring Boot | 5     |
-      | Selenium    | 3     |
-      | Java        | 2     |
+      | from_country | to_country | date_of_birth | first_name | last_name | email              | phone_number   | comments   |
+      | Isle of Man  | Mali       | 2011-05-31    | Kraig      | Wiza      | Kraig@nobody.com   | 1-000-884-1373 | For Travel |
+      | Lithuania    | Mexico     | 2001-01-01    | Houston    | Kertzmann | Houston@nobody.com | 284.864.6580   | For Travel |
+      | Somalia      | Greece     | 2004-07-02    | Ruthie     | Stamm     | Ruthie@nobody.com  | 1-209-813-9712 | For Travel |
