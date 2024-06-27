@@ -108,5 +108,9 @@ above INFO level logs only captured.
 logging.level.com.automation.SpringConcepts.visa=WARN - It will be applied to only files in
 the given package. Here the WARN and above WARN level logs only captured.
 
+Cucumber Files Execution From CmdLine
+======================================
+mvn test -Dcucumber.filter.tags="@google"
 
+The above command should work only on windows command prompt. It will not work from terminal.
 
