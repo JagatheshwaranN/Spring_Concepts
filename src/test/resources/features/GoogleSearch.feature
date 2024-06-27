@@ -1,5 +1,6 @@
 Feature: Google Search Functionality
 
+  @google
   Scenario Outline: As a user, I want to search on the google site
     Given I am on the google home page
     When I type "<keyword>" and click on search button

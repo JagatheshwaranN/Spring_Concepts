@@ -1,5 +1,6 @@
 Feature: Visa Registration Functionality
 
+  @visa
   Scenario Outline: As a user, I want to register on the Visa Registration Site
     Given I am on the Visa Registration home page
     When I enter "<first_name>" and "<last_name>" on the name details section
