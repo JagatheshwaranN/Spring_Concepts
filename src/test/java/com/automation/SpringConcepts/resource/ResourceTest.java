@@ -17,19 +17,19 @@ public class ResourceTest extends SpringTestNGTest {
     private static final Logger logger = LoggerFactory.getLogger(ResourceTest.class);
 
     @Value("classpath:data/user.csv")
-    private Resource userFile;
+    Resource userFile;
 
     @Value("file:D:\\Environment_Collection\\Intellij_Env\\SpringConcepts\\user_external.csv")
-    private Resource userExternalFile;
+    Resource userExternalFile;
 
     @Value("https://opensource-demo.orangehrmlive.com/web/index.php")
-    private Resource webPageResource;
+    Resource webPageResource;
 
     @Value("https://www.rfc-editor.org/rfc/rfc4021.txt")
-    private Resource webContent;
+    Resource webContent;
 
     @Value("${download.path}/web-file.txt")
-    private Path path;
+    Path path;
 
     @Test
     public void testProjectFile(){

@@ -11,13 +11,13 @@ import org.springframework.beans.factory.annotation.Value;
 public class GooglePage extends Base {
 
     @Autowired
-    private Search search;
+    Search search;
 
     @Autowired
-    private SearchResult searchResult;
+    SearchResult searchResult;
 
     @Value("${application.url}")
-    private String appURL;
+    String appURL;
 
     public void launch() {
         this.webDriver.manage().window().maximize();

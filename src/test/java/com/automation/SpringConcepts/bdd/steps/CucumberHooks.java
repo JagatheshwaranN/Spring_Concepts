@@ -15,7 +15,7 @@ public class CucumberHooks {
     ApplicationContext applicationContext;
 
     @LazyAutowired
-    private ScreenCapture screenCapture;
+    ScreenCapture screenCapture;
 
     @AfterStep
     public void afterStep(Scenario scenario) {

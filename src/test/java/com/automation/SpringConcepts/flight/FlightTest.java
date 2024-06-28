@@ -10,10 +10,10 @@ public class FlightTest extends SpringTestNGTest {
 
 
     @Autowired
-    private FlightPage flightPage;
+    FlightPage flightPage;
 
     @Autowired
-    private FlightAppDetail flightAppDetail;
+    FlightAppDetail flightAppDetail;
 
     @Test
     public void flightAppTest() {

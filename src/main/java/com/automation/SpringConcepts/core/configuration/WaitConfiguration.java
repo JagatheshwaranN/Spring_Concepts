@@ -16,7 +16,7 @@ import java.time.Duration;
 public class WaitConfiguration {
 
     @Value("${default.timeout:30}")
-    private int timeout;
+    int timeout;
 
     @Bean
     @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)

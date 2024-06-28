@@ -9,7 +9,7 @@ public class ConditionalExpressionTest extends SpringTestNGTest {
 
     @Autowired
     @Qualifier("Audi")
-    private Car car;
+    Car car;
 
     @Test
     public void validateCarTest() {

@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 public class Fresher {
 
     @Autowired
-    private Increment increment;
+    Increment increment;
 
     public Increment getIncrement() {
         return increment;

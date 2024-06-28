@@ -5,11 +5,11 @@ import org.springframework.stereotype.Component;
 @Component
 public class UserViaConstructor {
 
-    private Address address;
+    Address address;
 
-    private Salary salary;
+    Salary salary;
 
-    private Mobile mobile;
+    Mobile mobile;
 
     public UserViaConstructor(Address address, Salary salary, Mobile mobile){
         this.address = address;

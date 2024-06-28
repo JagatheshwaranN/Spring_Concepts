@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 public class Television {
 
     @Value("${tv.name:LG}")
-    private String tvName;
+    String tvName;
 
     public Television(){
         System.out.println("Inside the Constructor : "+ this.tvName);

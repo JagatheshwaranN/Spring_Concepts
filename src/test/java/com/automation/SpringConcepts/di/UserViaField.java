@@ -7,13 +7,13 @@ import org.springframework.stereotype.Component;
 public class UserViaField {
 
     @Autowired
-    private Address address;
+    Address address;
 
     @Autowired
-    private Salary salary;
+    Salary salary;
 
     @Autowired
-    private Mobile mobile;
+    Mobile mobile;
 
     public void printUserDetails() {
         System.out.println(address.getAddress());

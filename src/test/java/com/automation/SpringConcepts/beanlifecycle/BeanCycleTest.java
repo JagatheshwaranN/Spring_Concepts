@@ -9,7 +9,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 class BeanCycleTest {
 
 	@Autowired
-	private Television television;
+	Television television;
 
 	@Test
 	void validateTelevision() {

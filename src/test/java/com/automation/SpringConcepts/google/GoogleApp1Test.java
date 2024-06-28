@@ -15,10 +15,10 @@ import java.util.concurrent.TimeUnit;
 public class GoogleApp1Test extends SpringTestNGTest {
 
     @LazyAutowired
-    private GooglePage googlePage;
+    GooglePage googlePage;
 
     @LazyAutowired
-    private ScreenCapture screenCapture;
+    ScreenCapture screenCapture;
 
     @Test
     public void validateGoogleTest1() {

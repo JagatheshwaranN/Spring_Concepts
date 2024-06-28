@@ -10,7 +10,7 @@ import org.openqa.selenium.support.FindBy;
 public class SecondPage extends Base {
 
     @FindBy(id = "area")
-    private WebElement textArea;
+    WebElement textArea;
 
     public void enterMessage(String message){
         this.textArea.sendKeys(message);

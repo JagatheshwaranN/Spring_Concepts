@@ -12,7 +12,7 @@ import java.util.List;
 public class SearchResult extends Base {
 
     @FindBy(tagName = "h3")
-    private List<WebElement> searchResult;
+    List<WebElement> searchResult;
 
     public int getResultCount() {
         return this.searchResult.size();

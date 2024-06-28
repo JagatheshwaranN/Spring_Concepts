@@ -11,10 +11,10 @@ import java.util.List;
 public class FlightAppDetail {
 
     @Value("${flight.app.url}")
-    private String url;
+    String url;
 
     @Value("${flight.app.topnavbar.labels}")
-    private List<String> topNavBarLabels;
+    List<String> topNavBarLabels;
 
     public String getUrl() {
         return url;

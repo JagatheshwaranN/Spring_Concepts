@@ -19,13 +19,13 @@ public class CustomerVisaTest extends SpringTestNGTest {
     private static final Logger logger = LoggerFactory.getLogger(CustomerVisaTest.class);
 
     @Autowired
-    private CustomerRepository customerRepository;
+    CustomerRepository customerRepository;
 
     @Autowired
-    private VisaRegistrationPage visaRegistrationPage;
+    VisaRegistrationPage visaRegistrationPage;
 
     @Value("${visa.url}")
-    private String url;
+    String url;
 
     @Test
     public void getCustomerVisaDataSetCountTest() {

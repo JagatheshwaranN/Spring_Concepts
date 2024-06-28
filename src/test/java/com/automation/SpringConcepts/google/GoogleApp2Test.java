@@ -13,10 +13,10 @@ import org.testng.annotations.Test;
 public class GoogleApp2Test extends SpringTestNGTest {
 
     @LazyAutowired
-    private GooglePage googlePage;
+    GooglePage googlePage;
 
     @LazyAutowired
-    private ScreenCapture screenCapture;
+    ScreenCapture screenCapture;
 
     @Test
     public void validateGoogleTest2() {

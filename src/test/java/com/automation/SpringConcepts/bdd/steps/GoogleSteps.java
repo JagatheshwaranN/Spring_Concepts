@@ -15,7 +15,7 @@ import org.testng.Assert;
 public class GoogleSteps {
 
     @LazyAutowired
-    private GooglePage googlePage;
+    GooglePage googlePage;
 
     @Given("I am on the google home page")
     public void launchGoogleSite() {

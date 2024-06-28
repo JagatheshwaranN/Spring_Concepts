@@ -12,7 +12,7 @@ import java.util.List;
 public class MainPage extends Base {
 
     @FindBy(tagName = "a")
-    private List<WebElement> links;
+    List<WebElement> links;
 
     public void launch(String url) {
         this.webDriver.get(url);

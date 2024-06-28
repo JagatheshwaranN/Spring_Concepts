@@ -14,7 +14,7 @@ public class FlightPage extends Base {
 
 
     @FindBy(css = ".P6Wwdb.OE019d  .VfPpkd-dgl2Hf-ppHlrf-sM5MNb .VfPpkd-vQzf8d")
-    private List<WebElement> topNavBars;
+    List<WebElement> topNavBars;
 
     public void launch(String url) {
         this.webDriver.manage().window().maximize();

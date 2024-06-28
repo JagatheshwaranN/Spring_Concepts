@@ -12,7 +12,7 @@ import java.util.List;
 public class FirstPage extends Base {
 
     @FindBy(id = "area")
-    private WebElement textArea;
+    WebElement textArea;
 
     public void enterMessage(String message){
         this.textArea.sendKeys(message);

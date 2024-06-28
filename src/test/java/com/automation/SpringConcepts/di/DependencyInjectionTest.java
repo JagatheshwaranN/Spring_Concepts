@@ -11,22 +11,22 @@ import java.util.List;
 public class DependencyInjectionTest {
 
     @Autowired
-    private UserViaConstructor user;
+    UserViaConstructor user;
 
     @Autowired
-    private UserViaSetter userViaSetter;
+    UserViaSetter userViaSetter;
 
     @Autowired
-    private UserViaField userViaField;
+    UserViaField userViaField;
 
     @Value("${name:Test}")
-    private String name;
+    String name;
 
     @Value("${timeout}")
-    private int timeout;
+    int timeout;
 
     @Value("${browsers}")
-    private List<String> browsers;
+    List<String> browsers;
 
     @Test
     void validateUserViaConstructorTest() {

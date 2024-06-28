@@ -16,7 +16,7 @@ public class PropertyLoaderTest extends SpringTestNGTest {
     private static final Logger logger = LoggerFactory.getLogger(PropertyLoaderTest.class);
 
     @Autowired
-    private ResourceLoader resourceLoader;
+    ResourceLoader resourceLoader;
 
     @Test
     public void propertyLoaderTest() {

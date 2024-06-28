@@ -12,10 +12,10 @@ import java.util.List;
 public class Search extends Base {
 
     @FindBy(name = "q")
-    private WebElement searchBar;
+    WebElement searchBar;
 
-    @FindBy(name="btnK")
-    private List<WebElement> searchButtons;
+    @FindBy(name = "btnK")
+    List<WebElement> searchButtons;
 
     public void search(String value){
         this.searchBar.sendKeys(value);

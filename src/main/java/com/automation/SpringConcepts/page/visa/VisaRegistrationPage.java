@@ -17,40 +17,43 @@ public class VisaRegistrationPage extends Base {
     private static final Logger logger = LoggerFactory.getLogger(VisaRegistrationPage.class);
 
     @FindBy(id = "first_4")
-    private WebElement firstName;
+    WebElement firstName;
 
     @FindBy(id = "last_4")
-    private WebElement lastName;
+    WebElement lastName;
 
     @FindBy(id = "input_46")
-    private WebElement fromCountry;
+    WebElement fromCountry;
 
     @FindBy(id = "input_47")
-    private WebElement toCountry;
+    WebElement toCountry;
 
     @FindBy(id = "input_24_month")
-    private WebElement birthMonth;
+    WebElement birthMonth;
 
     @FindBy(id = "input_24_day")
-    private WebElement birthDay;
+    WebElement birthDay;
 
     @FindBy(id = "input_24_year")
-    private WebElement birthYear;
+    WebElement birthYear;
 
     @FindBy(id = "input_6")
-    private WebElement userEmail;
+    WebElement userEmail;
 
     @FindBy(id = "input_27_phone")
-    private WebElement phoneNumber;
+    WebElement phoneNumber;
 
     @FindBy(id = "input_45")
-    private WebElement comments;
+    WebElement comments;
 
     @FindBy(id = "submitBtn")
-    private WebElement submit;
+    WebElement submit;
 
     @FindBy(id = "requestnumber")
-    private WebElement requestNumber;
+    WebElement requestNumber;
+
+    public VisaRegistrationPage() {
+    }
 
     public void launch(String url) {
         logger.info("URL from Property File : " + url);

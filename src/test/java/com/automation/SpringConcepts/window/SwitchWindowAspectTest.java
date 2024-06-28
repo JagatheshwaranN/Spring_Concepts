@@ -15,19 +15,19 @@ import org.testng.annotations.Test;
 public class SwitchWindowAspectTest extends SpringTestNGTest {
 
     @Autowired
-    private MainPage mainPage;
+    MainPage mainPage;
 
     @Autowired
-    private FirstPage firstPage;
+    FirstPage firstPage;
 
     @Autowired
-    private SecondPage secondPage;
+    SecondPage secondPage;
 
     @Autowired
-    private ThirdPage thirdPage;
+    ThirdPage thirdPage;
 
     @Value("${window.url}")
-    private String url;
+    String url;
 
     @BeforeClass
     public void setup() {

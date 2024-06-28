@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 public class ScreenshotAspect {
 
     @Autowired
-    private ScreenCapture screenCapture;
+    ScreenCapture screenCapture;
 
     @After("@annotation(screenshot)")
     public void after(Screenshot screenshot){

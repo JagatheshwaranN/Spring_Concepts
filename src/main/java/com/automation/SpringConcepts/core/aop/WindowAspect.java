@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 public class WindowAspect {
 
     @Autowired
-    private SwitchWindow switchWindow;
+    SwitchWindow switchWindow;
 
     @Before("@target(window) && within(com.automation.SpringConcepts..*)")
     public void before(Window window){
@@ -21,7 +21,7 @@ public class WindowAspect {
     }
 
     @After("@target(window) && within(com.automation.SpringConcepts..*)")
-    public void after(Window window){
+    public void after(Window ignoredWindow){
         this.switchWindow.switchWindowByIndex(0);
     }
 

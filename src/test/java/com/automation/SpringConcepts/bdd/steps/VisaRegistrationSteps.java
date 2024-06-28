@@ -19,7 +19,7 @@ public class VisaRegistrationSteps {
     VisaRegistrationPage visaRegistrationPage;
 
     @Value("${visa.url}")
-    private String url;
+    String url;
 
     @Given("I am on the Visa Registration home page")
     public void iAmOnTheVisaRegistrationHomePage() {

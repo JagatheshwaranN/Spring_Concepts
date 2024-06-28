@@ -20,13 +20,13 @@ import java.nio.file.Path;
 public class ScreenCapture {
 
     @Autowired
-    private ApplicationContext applicationContext;
+    ApplicationContext applicationContext;
 
     @Autowired
-    private Faker faker;
+    Faker faker;
 
     @Value("${screen.path}")
-    private Path path;
+    Path path;
 
 
     public void captureScreenshot() {

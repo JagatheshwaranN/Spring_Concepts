@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 public class MultiBrowserTest extends SpringTestNGTest {
 
     @Autowired
-    private ApplicationContext applicationContext;
+    ApplicationContext applicationContext;
 
     @Test
     public void multiBrowserTest() {

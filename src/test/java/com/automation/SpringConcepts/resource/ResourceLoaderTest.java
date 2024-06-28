@@ -9,7 +9,6 @@ import org.springframework.util.FileCopyUtils;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -20,10 +19,10 @@ public class ResourceLoaderTest extends SpringTestNGTest {
     ResourceLoader resourceLoader;
 
     @Value("classpath:data/link.csv")
-    private Resource resource;
+    Resource resource;
 
     @Value("${download.path}")
-    private Path path;
+    Path path;
 
     @Test(dataProvider = "getData")
     public void resourceLoaderTest(String url, String file) throws IOException {

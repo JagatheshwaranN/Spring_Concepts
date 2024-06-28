@@ -23,10 +23,10 @@ import java.net.URI;
 public class RemoteDriverConfiguration {
 
     @Value("${selenium.grid.url}")
-    private String url;
+    String url;
 
     @Value("${browser}")
-    private String browser;
+    String browser;
 
     DesiredCapabilities capabilities = new DesiredCapabilities();
 
